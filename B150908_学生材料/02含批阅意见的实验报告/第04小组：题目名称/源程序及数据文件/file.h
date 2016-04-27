@@ -13,7 +13,7 @@ int  createFile(Owner own[ ])              /*建立初始的数据文件*/
     	}
 	printf("input owners\' information:\n");
 	n=readOwn(own,NUM);                /*调用owner.h中的函数读数据*/
-fwrite(own,sizeOwn,n,fp);                  /*将刚才读入的所有记录一次性写入文件*/
+	fwrite(own,sizeOwn,n,fp);                  /*将刚才读入的所有记录一次性写入文件*/
  	fclose(fp);                             /*关闭文件*/
 	 return n;
 }
@@ -45,6 +45,6 @@ void saveFile(Owner own[],int n)                  /*将结构体数组的内容写入文件*/
 		printf("can not open file !\n");           /*如果打开失败，输出提示信息*/
 		exit(0);                            /*然后退出*/
 	}
-	fwrite(stu,sizeOwn,n,fp);        
+	fwrite(own,sizeOwn,n,fp);        
 	fclose(fp);                              /*关闭文件*/
 }
